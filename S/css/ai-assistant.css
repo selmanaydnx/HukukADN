@@ -1,0 +1,282 @@
+/* ==========================================================================
+   ADN - 03 AI Evrak Hazırlama Stylesheet
+   ========================================================================== */
+
+.ai-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.ai-header-left h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-robot-badge {
+  background: #eff6ff;
+  color: #2563eb;
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.ai-header-left p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.ai-pill-tag {
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* AI Workspace Split Layout */
+.ai-workspace-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Left Column: Form */
+.ai-form-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.ai-form-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-control {
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 0.82rem;
+  font-family: inherit;
+  color: var(--text-main);
+  background: #f8fafc;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.form-control:focus {
+  outline: none;
+  background: #ffffff;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px var(--brand-blue-ring);
+}
+
+select.form-control {
+  cursor: pointer;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 75px;
+  line-height: 1.45;
+}
+
+.btn-generate-ai {
+  width: 100%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+
+.btn-generate-ai:hover {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.45);
+}
+
+.btn-generate-ai:active {
+  transform: translateY(0);
+}
+
+/* Right Column: Document Output Paper */
+.ai-preview-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+}
+
+.preview-header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.preview-title-wrap h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.preview-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.preview-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  color: var(--text-main);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.preview-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.preview-btn.btn-blue {
+  background: var(--brand-blue);
+  color: #ffffff;
+  border-color: var(--brand-blue);
+}
+
+.preview-btn.btn-blue:hover {
+  background: var(--brand-blue-hover);
+}
+
+/* Document Paper (A4 Look) */
+.paper-container {
+  padding: 28px;
+  background: #f1f5f9;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  overflow-x: auto;
+}
+
+.paper-sheet {
+  background: #ffffff;
+  width: 100%;
+  max-width: 720px;
+  min-height: 650px;
+  padding: 48px 44px;
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  font-family: 'Times New Roman', Times, serif, 'Plus Jakarta Sans';
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #111827;
+  white-space: pre-wrap;
+  outline: none;
+  position: relative;
+}
+
+.paper-sheet.editable {
+  border: 2px dashed #3b82f6;
+  background: #fdfefe;
+}
+
+/* Generating / Streaming Animation */
+.ai-generating-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+.ai-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e2e8f0;
+  border-top-color: var(--brand-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.ai-generating-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}

@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADN - Avukat Ofisi Otomasyon Arayüzü</title>
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/case-detail.css">
+  <link rel="stylesheet" href="css/ai-assistant.css">
+  <link rel="stylesheet" href="css/calendar.css">
+  <link rel="stylesheet" href="css/calculator.css">
+  <link rel="stylesheet" href="css/crm.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Top Announcement Ribbon -->
+  <div class="top-header-ribbon">
+    <div>
+      <strong>HUKUK TEKNOLOJİSİ:</strong> DAHA FAZLA ZAMANA, DAHA FAZLA ADALET • Evrak hazırlama, süre takibi, dosya yönetimi tek platformda
+    </div>
+    <div class="quote-text">
+      "Daha verimli, daha güçlü bir hukuk ofisi"
+    </div>
+  </div>
+
+  <div class="app-container">
+    
+    <!-- ==========================================================================
+         SIDEBAR NAVIGATION
+         ========================================================================== -->
+    <aside class="sidebar">
+      <div class="brand-header">
+        <div class="brand-icon">
+          <!-- Scales of Justice SVG -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="M7 21h10"></path>
+            <path d="M12 3v18"></path>
+            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <h1>ADN</h1>
+          <span>Hukukta Teknoloji</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <div class="nav-section-title">Yönetim & Süreç</div>
+
+        <a class="nav-item active" data-view="dashboard" id="nav-dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Ana Panel</span>
+        </a>
+
+        <a class="nav-item" data-view="cases-list" id="nav-cases-list">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span>Dosyalar</span>
+        </a>
+
+        <a class="nav-item" data-view="case-detail" id="nav-case-detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+          </svg>
+          <span>Dosya Detayı</span>
+        </a>
+
+        <a class="nav-item" data-view="calendar" id="nav-calendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Takvim & Süre</span>
+        </a>
+
+        <a class="nav-item" data-view="ai-assistant" id="nav-ai-assistant">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"></path>
+          </svg>
+          <span>AI Asistan</span>
+          <span class="badge" style="background: rgba(37, 99, 235, 0.5);">Yeni</span>
+        </a>
+
+        <div class="nav-section-title" style="margin-top: 10px;">Hukuk Bürosu Araçları</div>
+
+        <a class="nav-item" data-view="clients" id="nav-clients">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          <span>Müvekkiller (CRM)</span>
+        </a>
+
+        <a class="nav-item" data-view="tools" id="nav-tools">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+            <line x1="8" y1="6" x2="16" y2="6"></line>
+            <line x1="16" y1="14" x2="16" y2="18"></line>
+            <path d="M16 10h.01"></path>
+            <path d="M12 10h.01"></path>
+            <path d="M8 10h.01"></path>
+            <path d="M12 14h.01"></path>
+            <path d="M8 14h.01"></path>
+            <path d="M12 18h.01"></path>
+            <path d="M8 18h.01"></path>
+          </svg>
+          <span>SMM & Süre Araçları</span>
+        </a>
+
+        <a class="nav-item" data-view="finance" id="nav-finance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="12" y1="1" x2="12" y2="23"></line>
+            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+          </svg>
+          <span>Finans & Masraf</span>
+        </a>
+
+        <a class="nav-item" onclick="if(confirm('Tüm kayıtları sıfırlamak istediğinize emin misiniz?')){DataStore.resetAll(); location.reload();}" style="color: #ef4444; margin-top: 10px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 6h18"></path>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+          </svg>
+          <span>Verileri Sıfırla</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>Adalet İçin Teknoloji</span>
+        <span class="love-icon">♡</span>
+      </div>
+    </aside>
+
+    <!-- ==========================================================================
+         MAIN CONTENT AREA & TOPBAR
+         ========================================================================== -->
+    <main class="main-wrapper">
+      
+      <!-- Topbar Header -->
+      <header class="topbar">
+        <div class="search-container">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="globalSearchInput" placeholder="Dosya, müvekkil, evrak ara...">
+          <span class="search-kbd">⌘K</span>
+        </div>
+
+        <div class="topbar-actions">
+          <button class="btn-quick-action" id="btnQuickNewCase">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            Yeni Dosya
+          </button>
+
+          <button class="btn-quick-action" style="background: #f0fdf4; color: #15803d; border-color: #bbf7d0;" onclick="App.navigateTo('tools')">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+              <line x1="8" y1="6" x2="16" y2="6"></line>
+            </svg>
+            SMM Hesapla
+          </button>
+
+          <button class="notification-btn" id="topbarNotificationBtn" title="Bildirimler">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+
+          <div class="user-profile" title="Profil ismini değiştirmek için tıklayınız">
+            <img class="user-avatar" src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=200" alt="Avukat">
+            <div class="user-info">
+              <span class="user-name" id="topbarLawyerName">Av. [Adınız Soyadınız]</span>
+              <span class="user-role" id="topbarLawyerFirm">Hukuk Bürosu (Tıkla Düzenle)</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content Area -->
+      <div class="content-area">
+
+        <!-- Module Quick Switch Pills -->
+        <div class="module-quick-switch">
+          <button class="module-pill active" data-view="dashboard">
+            <span class="pill-number">01</span>
+            <span>Ana Panel</span>
+          </button>
+          <button class="module-pill" data-view="cases-list">
+            <span class="pill-number">02</span>
+            <span>Dosyalar</span>
+          </button>
+          <button class="module-pill" data-view="case-detail">
+            <span class="pill-number">03</span>
+            <span>Dosya Detayı</span>
+          </button>
+          <button class="module-pill" data-view="calendar">
+            <span class="pill-number">04</span>
+            <span>Takvim & Süre</span>
+          </button>
+          <button class="module-pill" data-view="ai-assistant">
+            <span class="pill-number">05</span>
+            <span>AI Evrak</span>
+          </button>
+          <button class="module-pill" data-view="clients">
+            <span class="pill-number">06</span>
+            <span>Müvekkiller</span>
+          </button>
+          <button class="module-pill" data-view="tools">
+            <span class="pill-number">07</span>
+            <span>SMM & Süre Araçları</span>
+          </button>
+          <button class="module-pill" data-view="finance">
+            <span class="pill-number">08</span>
+            <span>Finans & Masraf</span>
+          </button>
+        </div>
+
+        <!-- ====================================================================
+             01 - ANA PANEL (DASHBOARD)
+             ==================================================================== -->
+        <section id="view-dashboard" class="view-section active-view">
+          
+          <div class="welcome-banner">
+            <div class="welcome-text">
+              <h2 id="welcomeLawyerName">Hoş Geldiniz</h2>
+              <p>Avukat ofisi iş, süre ve evrak takip paneliniz hazır.</p>
+            </div>
+            <div class="quote-badge">
+              <span class="quote-content">"Hukuk, hakkın teminatıdır."</span>
+              <span class="quote-author">— M. Kemal Atatürk</span>
+            </div>
+          </div>
+
+          <!-- Stat Cards Grid -->
+          <div class="stat-cards-grid">
+            <div class="stat-card" onclick="App.navigateTo('cases-list')">
+              <div class="stat-icon-wrapper stat-icon-blue">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-title">Aktif Dosya</div>
+                <div class="stat-row">
+                  <span class="stat-value" id="statActiveCasesValue">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card" onclick="App.navigateTo('calendar')">
+              <div class="stat-icon-wrapper stat-icon-indigo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-title">Bugünkü Duruşma</div>
+                <div class="stat-row">
+                  <span class="stat-value" id="statTodayHearingsValue">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card" onclick="App.navigateTo('dashboard')">
+              <div class="stat-icon-wrapper stat-icon-amber">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-title">Bekleyen Görev</div>
+                <div class="stat-row">
+                  <span class="stat-value" id="statPendingTasksValue">0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stat-card" onclick="App.navigateTo('finance')">
+              <div class="stat-icon-wrapper stat-icon-emerald">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <div class="stat-content">
+                <div class="stat-title">Tahsilat</div>
+                <div class="stat-row">
+                  <span class="stat-value" id="statCollectionsValue">0 TL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Urgent Alert Banner -->
+          <div class="urgent-alert-banner" id="urgentAlertBanner"></div>
+
+          <!-- Lower Dashboard Grid -->
+          <div class="dashboard-lower-grid">
+            <!-- Column 1: Bugün -->
+            <div class="panel-card">
+              <div class="panel-header">
+                <div class="panel-header-left">
+                  <h3>Bugün</h3>
+                  <div class="panel-subtitle">Günün Ajandası</div>
+                </div>
+                <a class="link-all" onclick="App.openAddScheduleModal()">+ Etkinlik Ekle</a>
+              </div>
+              <div class="panel-body">
+                <div class="schedule-list" id="todayScheduleList"></div>
+              </div>
+            </div>
+
+            <!-- Column 2: Son Görevler -->
+            <div class="panel-card">
+              <div class="panel-header">
+                <div class="panel-header-left">
+                  <h3>Son Görevler</h3>
+                  <div class="panel-subtitle">Yapılacaklar Listesi</div>
+                </div>
+                <a class="link-all" id="addNewTaskBtn">+ Yeni Görev</a>
+              </div>
+              <div class="panel-body">
+                <div class="tasks-list" id="tasksList"></div>
+              </div>
+            </div>
+
+            <!-- Column 3: Mini Takvim -->
+            <div class="panel-card mini-calendar-panel">
+              <div class="panel-header">
+                <div class="panel-header-left">
+                  <h3 id="miniCalTitle">Mart 2026</h3>
+                  <div class="panel-subtitle">Hızlı Tarih Seçici</div>
+                </div>
+                <div class="mini-cal-nav">
+                  <button class="mini-nav-btn" onclick="DashboardModule.renderMiniCalendar(2026, 1)">‹</button>
+                  <button class="mini-nav-btn" onclick="DashboardModule.renderMiniCalendar(2026, 2)">›</button>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="mini-calendar-container">
+                  <div class="mini-weekdays-grid">
+                    <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cts</span><span>Paz</span>
+                  </div>
+                  <div class="mini-days-grid" id="miniDaysGrid"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ====================================================================
+             02 - DOSYALAR LİSTESİ (ALL CASES DIRECTORY)
+             ==================================================================== -->
+        <section id="view-cases-list" class="view-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Dava Dosyaları Dizini</h2>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Kayıtlı tüm dava dosyalarınızı görüntüleyin ve yönetin.</p>
+            </div>
+            <button class="btn-primary" onclick="document.getElementById('newCaseModal').style.display = 'flex'">
+              + Yeni Dava Kaydı
+            </button>
+          </div>
+
+          <div class="card" style="padding: 20px; overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.85rem; text-align: left;">
+              <thead>
+                <tr style="border-bottom: 2px solid var(--border-light); color: var(--text-muted);">
+                  <th style="padding: 12px 14px;">Esas No</th>
+                  <th style="padding: 12px 14px;">Müvekkil / Karşı Taraf</th>
+                  <th style="padding: 12px 14px;">Mahkeme</th>
+                  <th style="padding: 12px 14px;">Dava Türü</th>
+                  <th style="padding: 12px 14px;">Durum</th>
+                  <th style="padding: 12px 14px;">Sonraki İşlem</th>
+                  <th style="padding: 12px 14px; text-align: right;">İşlem</th>
+                </tr>
+              </thead>
+              <tbody id="allCasesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             03 - DOSYA DETAYI (CASE DETAIL)
+             ==================================================================== -->
+        <section id="view-case-detail" class="view-section">
+          <!-- Rendered dynamically by case-detail.js -->
+        </section>
+
+        <!-- ====================================================================
+             04 - TAKVİM & SÜRE TAKİBİ (CALENDAR)
+             ==================================================================== -->
+        <section id="view-calendar" class="view-section">
+          <div class="cal-page-header">
+            <div class="cal-header-left">
+              <h2>Takvim & Süre Takibi</h2>
+              <p>Duruşmalarınızı, sürelerinizi ve önemli tarihleri tek ekranda yönetin.</p>
+            </div>
+            <div class="cal-alert-badge">
+              <div class="cal-alert-icon">🔔</div>
+              <div class="cal-alert-text">
+                <strong>Otomatik Hatırlatmalar Aktif</strong> - Günlük ve haftalık bildirimler açık
+              </div>
+              <button class="btn-cal-settings" onclick="CalendarModule.promptNewDeadline()">+ Yeni Süre Ekle</button>
+            </div>
+          </div>
+
+          <div class="cal-workspace-grid">
+            <div class="big-calendar-card">
+              <div class="cal-control-bar">
+                <div class="cal-month-nav">
+                  <span class="cal-current-month-title" id="calCurrentMonthTitle">Mart 2026</span>
+                  <button class="cal-arrow-btn" id="btnCalPrevMonth">‹</button>
+                  <button class="cal-arrow-btn" id="btnCalNextMonth">›</button>
+                  <button class="btn-today" id="btnCalToday">Bugün</button>
+                </div>
+                <div class="cal-view-toggles">
+                  <button class="cal-view-btn active" onclick="CalendarModule.switchView('ay', this)">Ay</button>
+                  <button class="cal-view-btn" onclick="CalendarModule.switchView('hafta', this)">Hafta</button>
+                  <button class="cal-view-btn" onclick="CalendarModule.switchView('gün', this)">Gün</button>
+                </div>
+              </div>
+
+              <div class="calendar-weekdays">
+                <span>Pzt</span><span>Sal</span><span>Çar</span><span>Per</span><span>Cum</span><span>Cts</span><span>Paz</span>
+              </div>
+
+              <div class="calendar-days-grid" id="bigCalendarGrid"></div>
+
+              <div class="calendar-legend">
+                <div class="legend-item"><span class="legend-dot" style="background: #2563eb;"></span><span>Duruşma</span></div>
+                <div class="legend-item"><span class="legend-dot" style="background: #10b981;"></span><span>Görüşme</span></div>
+                <div class="legend-item"><span class="legend-dot" style="background: #ef4444;"></span><span>Son Süre</span></div>
+              </div>
+            </div>
+
+            <div class="deadlines-card">
+              <div class="deadlines-filter-tabs">
+                <button class="deadline-tab active" onclick="CalendarModule.filterDeadlines('all', this)">Tüm Süreler</button>
+                <button class="deadline-tab" onclick="CalendarModule.filterDeadlines('hearings', this)">Duruşmalar</button>
+                <button class="deadline-tab" onclick="CalendarModule.filterDeadlines('deadlines', this)">Son Süreler</button>
+              </div>
+              <div class="deadline-list" id="deadlinesList"></div>
+              <div class="legal-quote-card">
+                <div class="quote-icon-balance">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="M7 21h10"></path>
+                    <path d="M12 3v18"></path>
+                  </svg>
+                </div>
+                <p class="quote-card-text">"Zamanında atılan her adım, daha güçlü bir savunmadır."</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             05 - AI EVRAK HAZIRLAMA (AI ASSISTANT)
+             ==================================================================== -->
+        <section id="view-ai-assistant" class="view-section">
+          <div class="ai-page-header">
+            <div class="ai-header-left">
+              <h2>
+                <span class="ai-robot-badge">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"></path>
+                  </svg>
+                </span>
+                AI ile Dilekçe Hazırla
+              </h2>
+              <p>Yapay zeka desteği ile dakikalar içinde, hatasız ve profesyonel hukuki evraklar hazırlayın.</p>
+            </div>
+            <div class="ai-pill-tag">✨ Yapay Zeka ile Daha Hızlı, Daha Doğru</div>
+          </div>
+
+          <div class="ai-workspace-grid">
+            <div class="ai-form-card">
+              <h3 class="ai-form-title">Evrak Bilgileri</h3>
+              <div class="form-group">
+                <label for="aiTemplateSelect">Dilekçe / Evrak Şablonu</label>
+                <select id="aiTemplateSelect" class="form-control">
+                  <option value="is-dilekcesi">İşçilik Alacağı Dava Dilekçesi</option>
+                  <option value="cevap-dilekcesi">Cevap Dilekçesi (İlk İtirazlar & Esas)</option>
+                  <option value="istinaf-dilekcesi">İstinaf Başvuru Dilekçesi</option>
+                  <option value="ihtarname">Noter İhtarnamesi</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="aiClientName">Müvekkil Adı</label>
+                <input type="text" id="aiClientName" class="form-control" placeholder="Örn: Ahmet Yılmaz">
+              </div>
+
+              <div class="form-group">
+                <label for="aiOpponentName">Karşı Taraf</label>
+                <input type="text" id="aiOpponentName" class="form-control" placeholder="Örn: XYZ Ltd. Şti.">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="form-group">
+                  <label for="aiCourtName">Mahkeme / Merci</label>
+                  <input type="text" id="aiCourtName" class="form-control" placeholder="Örn: İstanbul 5. İş Mahkemesi">
+                </div>
+                <div class="form-group">
+                  <label for="aiCaseNo">Dosya / Esas No</label>
+                  <input type="text" id="aiCaseNo" class="form-control" placeholder="Örn: 2026/342">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="aiIncidentSummary">Olay Özeti</label>
+                <textarea id="aiIncidentSummary" class="form-control" rows="3" placeholder="Uyuşmazlık konusunu ve olay akışını kısaca özetleyiniz..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="aiClaimDetails">Talep ve Alacak Kalemleri</label>
+                <textarea id="aiClaimDetails" class="form-control" rows="2" placeholder="Örn: Kıdem, ihbar tazminatı ve fazla mesai alacaklarının tahsili..."></textarea>
+              </div>
+
+              <button class="btn-generate-ai" id="btnGenerateDraft">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3Z"></path>
+                </svg>
+                + Taslak Oluştur
+              </button>
+            </div>
+
+            <div class="ai-preview-card">
+              <div class="preview-header">
+                <div class="preview-title-wrap">
+                  <h3>Dava Dilekçesi Taslağı</h3>
+                </div>
+                <div class="preview-actions">
+                  <button class="preview-btn" id="btnCopyDraft">Kopyala</button>
+                  <button class="preview-btn" id="btnToggleEditDraft">Düzenle</button>
+                  <button class="preview-btn btn-blue" id="btnDownloadPDF">PDF İndir</button>
+                </div>
+              </div>
+
+              <div class="paper-container">
+                <div class="paper-sheet" id="aiPreviewSheet"></div>
+                <div class="ai-generating-overlay" id="aiGeneratingOverlay">
+                  <div class="ai-spinner"></div>
+                  <span class="ai-generating-text">Yapay zeka mevzuat ve içtihatları tarıyor, taslak hazırlanıyor...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             06 - MÜVEKKİLLER PORTALI (CRM)
+             ==================================================================== -->
+        <section id="view-clients" class="view-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Müvekkiller CRM & İletişim</h2>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Müvekkil bilgileri, vekâletname detayları ve tek tıkla WhatsApp bildirimleri.</p>
+            </div>
+            <button class="btn-primary" onclick="CRMModule.openNewClientModal()">
+              + Yeni Müvekkil Ekle
+            </button>
+          </div>
+
+          <div class="crm-grid" id="clientsCardsGrid">
+            <!-- Rendered by crm.js -->
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             07 - HUKUKİ ARAÇLAR (SMM & YASAL SÜRE HESAPLAYICI)
+             ==================================================================== -->
+        <section id="view-tools" class="view-section">
+          <div style="margin-bottom: 24px;">
+            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Hukuki Hesaplama Araçları</h2>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Serbest Meslek Makbuzu (SMM), HMK/İİK yasal süre ve dava harç hesaplama motoru.</p>
+          </div>
+
+          <div class="calc-container">
+            
+            <!-- Tool 1: Serbest Meslek Makbuzu (SMM) -->
+            <div class="calc-card">
+              <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                <span>🧾</span> Serbest Meslek Makbuzu (SMM) Hesapla
+              </h3>
+
+              <div class="calc-segmented-control">
+                <input type="radio" id="calcGross" name="smmCalcType" value="gross" class="calc-segment-input" checked onchange="LegalCalculator.calculateSMM()">
+                <label for="calcGross" class="calc-segment-label">Brüt'ten Hesapla</label>
+
+                <input type="radio" id="calcNet" name="smmCalcType" value="net" class="calc-segment-input" onchange="LegalCalculator.calculateSMM()">
+                <label for="calcNet" class="calc-segment-label">Net Ele Geçenden</label>
+              </div>
+
+              <div class="form-group">
+                <label for="smmAmountInput">Ücret Tutarı (TL)</label>
+                <input type="number" id="smmAmountInput" class="form-control" placeholder="Örn: 25000" oninput="LegalCalculator.calculateSMM()">
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                <div class="form-group">
+                  <label for="smmKdvSelect">KDV Oranı</label>
+                  <select id="smmKdvSelect" class="form-control" onchange="LegalCalculator.calculateSMM()">
+                    <option value="20">%20 (Genel Hukuki Hizmet)</option>
+                    <option value="10">%10 (Adli Yardım / Aile / Tüketici)</option>
+                    <option value="0">%0 (KDV Muafiyeti)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="smmStoppageSelect">Gelir Vergisi Stopajı</label>
+                  <select id="smmStoppageSelect" class="form-control" onchange="LegalCalculator.calculateSMM()">
+                    <option value="20">%20 (Şirket / Tüzel Kişi)</option>
+                    <option value="0">%0 (Bireysel / Stopajsız Şahıs)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="smmTevkifatSelect">KDV Tevkifatı</label>
+                <select id="smmTevkifatSelect" class="form-control" onchange="LegalCalculator.calculateSMM()">
+                  <option value="none">Tevkifat Yok</option>
+                  <option value="5_10">5/10 KDV Tevkifatı (Kamu / Belirlenmiş Alıcılar)</option>
+                </select>
+              </div>
+
+              <!-- SMM Receipt Preview -->
+              <div class="smm-receipt-paper" style="margin-top: 18px;">
+                <div class="smm-receipt-header">
+                  <h4>e-SERBEST MESLEK MAKBUZU</h4>
+                </div>
+
+                <div class="smm-receipt-row">
+                  <span>Brüt Ücret:</span>
+                  <span id="smmResGross">0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row">
+                  <span>Gelir Vergisi Stopajı:</span>
+                  <span id="smmResStoppage" style="color: #dc2626;">-0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row">
+                  <span>Net Ücret:</span>
+                  <span id="smmResNet">0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row">
+                  <span>Hesaplanan KDV:</span>
+                  <span id="smmResKdvTotal">+0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row">
+                  <span>Tevkif Edilen KDV:</span>
+                  <span id="smmResTevkifat" style="color: #ea580c;">-0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row">
+                  <span>Tahsil Edilen KDV:</span>
+                  <span id="smmResCollectedKdv">+0,00 TL</span>
+                </div>
+                <div class="smm-receipt-row highlight">
+                  <span>Müvekkilden Tahsil Edilecek:</span>
+                  <span id="smmResTotalPayable">0,00 TL</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-top: 16px;">
+                <button class="btn-primary" style="flex: 1; justify-content: center;" onclick="LegalCalculator.saveSMMToFinance()">
+                  💾 Makbuzu Kaydet & Kasaya Ekle
+                </button>
+              </div>
+            </div>
+
+            <!-- Tool 2: Yasal Süre Hesaplayıcı -->
+            <div class="calc-card">
+              <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                <span>⏱️</span> HMK & İİK Yasal Süre Hesaplayıcı
+              </h3>
+
+              <div class="form-group">
+                <label for="calcServiceDate">Tebliğ / Karar Tarihi</label>
+                <input type="date" id="calcServiceDate" class="form-control" onchange="LegalCalculator.calculateDeadline()">
+              </div>
+
+              <div class="form-group">
+                <label for="calcDeadlineRule">Süre Kuralı & İşlem Türü</label>
+                <select id="calcDeadlineRule" class="form-control" onchange="LegalCalculator.calculateDeadline()">
+                  <option value="hmk_2_weeks">HMK Cevap Dilekçesi & İstinaf Süresi (2 Hafta)</option>
+                  <option value="iik_7_days">İcra Takibi Ödeme Emrine İtiraz (7 Gün)</option>
+                  <option value="cmk_7_days">Ceza Mahkemesi İstinaf Süresi (7 Gün)</option>
+                  <option value="iik_5_days">Kambiyo Senetlerine İtiraz / Şikayet (5 Gün)</option>
+                  <option value="iyuk_30_days">İdari Yargı Dava Açma & İstinaf (30 Gün)</option>
+                  <option value="custom_days">Özel Gün Sayısı Mehil Süresi...</option>
+                </select>
+              </div>
+
+              <div id="calcDeadlineResultBox">
+                <div style="text-align: center; padding: 24px; color: #94a3b8; font-size: 0.85rem;">
+                  Lütfen yukarıdan tebliğ tarihi seçiniz. Hafta sonu ertelemesi ve adli tatil kuralları otomatik uygulanacaktır.
+                </div>
+              </div>
+
+              <!-- Tool 3: Dava Açılış Harç Hesaplayıcı -->
+              <div style="margin-top: 32px; border-top: 2px solid var(--border-light); padding-top: 20px;">
+                <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 12px;">⚖️ Dava Harç & Masraf Tahmini</h4>
+
+                <div class="form-group">
+                  <label for="harcClaimAmount">Dava / Alacak Değeri (TL)</label>
+                  <input type="number" id="harcClaimAmount" class="form-control" placeholder="Örn: 100000" oninput="LegalCalculator.calculateCourtFees()">
+                </div>
+
+                <div style="display: flex; gap: 16px; margin-bottom: 12px; font-size: 0.82rem;">
+                  <label><input type="radio" name="harcType" value="nispi" checked onchange="LegalCalculator.calculateCourtFees()"> Nispi Harç (Tazminat, Alacak)</label>
+                  <label><input type="radio" name="harcType" value="maktu" onchange="LegalCalculator.calculateCourtFees()"> Maktu Harç (Tahliye, Tespit)</label>
+                </div>
+
+                <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 0.8rem;">
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                    <span>Başvuru & Vekâlet Harcı:</span>
+                    <strong id="harcResBasvuru">488,40 TL</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                    <span>Peşin Harç:</span>
+                    <strong id="harcResPesin">0,00 TL</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
+                    <span>Tahmini Gider Avansı:</span>
+                    <strong id="harcResGider">1.500,00 TL</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; border-top: 1px solid #cbd5e1; padding-top: 6px; margin-top: 6px; font-weight: 800; color: #2563eb;">
+                    <span>Tahmini Açılış Masrafı:</span>
+                    <span id="harcResTotal">1.988,40 TL</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ====================================================================
+             08 - FİNANS, MASRAF & CARİ HESAP
+             ==================================================================== -->
+        <section id="view-finance" class="view-section">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+            <div>
+              <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-main);">Finans, Kasa & Masraf Takibi</h2>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Dava harçları, bilirkişi avansları ve Serbest Meslek Makbuzu tahsilatları.</p>
+            </div>
+            <button class="btn-primary" onclick="FinanceModule.promptAddExpense()">
+              + Masraf Kaydı Ekle
+            </button>
+          </div>
+
+          <!-- Overview 3 Cards -->
+          <div class="fin-overview-grid">
+            <div class="fin-overview-card">
+              <div class="fin-card-label">Toplam Tahsilat (SMM)</div>
+              <div class="fin-card-value fin-val-green" id="finTotalCollected">0,00 TL</div>
+            </div>
+            <div class="fin-overview-card">
+              <div class="fin-card-label">Toplam Dosya Masrafları</div>
+              <div class="fin-card-value fin-val-red" id="finTotalExpense">0,00 TL</div>
+            </div>
+            <div class="fin-overview-card">
+              <div class="fin-card-label">Kasa / Net Büro Bakiyesi</div>
+              <div class="fin-card-value fin-val-blue" id="finBalance">0,00 TL</div>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+            
+            <!-- Expenses List -->
+            <div class="card" style="padding: 20px;">
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 14px;">Dosya Masraf & Harç Kayıtları</h3>
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left;">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border-light); color: var(--text-muted);">
+                    <th style="padding: 10px 12px;">Tarih</th>
+                    <th style="padding: 10px 12px;">Dosya</th>
+                    <th style="padding: 10px 12px;">Tür</th>
+                    <th style="padding: 10px 12px;">Açıklama</th>
+                    <th style="padding: 10px 12px; text-align: right;">Tutar</th>
+                  </tr>
+                </thead>
+                <tbody id="expensesTableBody"></tbody>
+              </table>
+            </div>
+
+            <!-- SMM Receipts List -->
+            <div class="card" style="padding: 20px;">
+              <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 14px;">Kesilen Serbest Meslek Makbuzları</h3>
+              <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; text-align: left;">
+                <thead>
+                  <tr style="border-bottom: 2px solid var(--border-light); color: var(--text-muted);">
+                    <th style="padding: 10px 12px;">Makbuz No</th>
+                    <th style="padding: 10px 12px;">Müvekkil</th>
+                    <th style="padding: 10px 12px;">Açıklama</th>
+                    <th style="padding: 10px 12px;">Tarih</th>
+                    <th style="padding: 10px 12px; text-align: right;">Tahsilat</th>
+                  </tr>
+                </thead>
+                <tbody id="smmTableBody"></tbody>
+              </table>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ==========================================================================
+       MODALS
+       ========================================================================== -->
+  
+  <!-- New Case Modal -->
+  <div class="modal-overlay" id="newCaseModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Yeni Dava Dosyası Aç</h3>
+        <button class="modal-close" id="btnCloseNewCaseModal">✕</button>
+      </div>
+      <form id="newCaseForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="newClientInput">Müvekkil Adı / Unvanı</label>
+            <input type="text" id="newClientInput" class="form-control" placeholder="Örn: Ahmet Yılmaz" required>
+          </div>
+          <div class="form-group">
+            <label for="newOpponentInput">Karşı Taraf</label>
+            <input type="text" id="newOpponentInput" class="form-control" placeholder="Örn: XYZ Ltd. Şti.">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label for="newCourtInput">Mahkeme / Merci</label>
+              <input type="text" id="newCourtInput" class="form-control" placeholder="Örn: İstanbul 5. İş Mahkemesi" required>
+            </div>
+            <div class="form-group">
+              <label for="newCaseNoInput">Esas No</label>
+              <input type="text" id="newCaseNoInput" class="form-control" placeholder="Örn: 2026/342">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="newCaseTypeInput">Dava Türü</label>
+            <select id="newCaseTypeInput" class="form-control">
+              <option>İş Hukuku / Alacak</option>
+              <option>Ticari Alacak & Tazminat</option>
+              <option>Kira & Tahliye</option>
+              <option>İcra & İflas Takibi</option>
+              <option>Ceza Hukuku</option>
+              <option>Aile Hukuku</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline" onclick="document.getElementById('newCaseModal').style.display = 'none'">İptal</button>
+          <button type="submit" class="btn-primary">Dosyayı Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- New Client Modal -->
+  <div class="modal-overlay" id="newClientModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Yeni Müvekkil & Vekâletname Kaydı</h3>
+        <button class="modal-close" onclick="document.getElementById('newClientModal').style.display = 'none'">✕</button>
+      </div>
+      <form id="newClientForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="clientNameInput">Müvekkil Adı Soyadı / Şirket Unvanı</label>
+            <input type="text" id="clientNameInput" class="form-control" placeholder="Örn: Mehmet Kaya veya Atlas Ltd." required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label for="clientPhoneInput">Telefon (WhatsApp Uyumlu)</label>
+              <input type="text" id="clientPhoneInput" class="form-control" placeholder="Örn: +90 532 123 4567">
+            </div>
+            <div class="form-group">
+              <label for="clientEmailInput">E-posta</label>
+              <input type="email" id="clientEmailInput" class="form-control" placeholder="Örn: ornek@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="clientTaxNoInput">T.C. Kimlik / Vergi No</label>
+            <input type="text" id="clientTaxNoInput" class="form-control" placeholder="Örn: 12345678901">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label for="clientNotaryInput">Noterlik Bilgisi</label>
+              <input type="text" id="clientNotaryInput" class="form-control" placeholder="Örn: Beşiktaş 12. Noterliği">
+            </div>
+            <div class="form-group">
+              <label for="clientJournalInput">Yevmiye No</label>
+              <input type="text" id="clientJournalInput" class="form-control" placeholder="Örn: 14281">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-outline" onclick="document.getElementById('newClientModal').style.display = 'none'">İptal</button>
+          <button type="submit" class="btn-primary">Müvekkili Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- WhatsApp Bilgilendirme Modal -->
+  <div class="modal-overlay" id="whatsappModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Müvekkile WhatsApp / SMS Bilgilendirmesi</h3>
+        <button class="modal-close" onclick="document.getElementById('whatsappModal').style.display = 'none'">✕</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: #475569; margin-bottom: 14px;">
+          Müvekkil: <strong id="waClientName">-</strong>
+        </p>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+          <button class="btn-outline" style="font-size: 0.75rem;" onclick="CRMModule.updateWAMessage('hearing')">Duruşma Hatırlatması</button>
+          <button class="btn-outline" style="font-size: 0.75rem;" onclick="CRMModule.updateWAMessage('expense')">Ara Karar / Masraf Talebi</button>
+          <button class="btn-outline" style="font-size: 0.75rem;" onclick="CRMModule.updateWAMessage('decision')">Gerekçeli Karar Bildirimi</button>
+        </div>
+
+        <div class="form-group">
+          <label>Mesaj Taslağı</label>
+          <textarea id="waMessagePreview" class="form-control" rows="8"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn-outline" onclick="document.getElementById('whatsappModal').style.display = 'none'">Kapat</button>
+        <button type="button" class="btn-primary" style="background: #25D366; border-color: #25D366;" onclick="CRMModule.sendWhatsApp()">
+          💬 WhatsApp ile Gönder
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Application Scripts -->
+  <script src="js/mock-data.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/case-detail.js"></script>
+  <script src="js/ai-assistant.js"></script>
+  <script src="js/calendar.js"></script>
+  <script src="js/legal-calc.js"></script>
+  <script src="js/crm.js"></script>
+  <script src="js/finance.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADN | Hukuk Bürosu Yönetim ve İş Takip Platformu</title>
+  <meta name="description" content="Avukatlar ve hukuk büroları için dosya, müvekkil CRM, duruşma, tebligat süreleri, SMM ve yetki belgesi yönetim platformu.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚖️</text></svg>">
+</head>
+<body style="background: var(--bg-main); color: var(--text-main); min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- Üst Menü / Navigation -->
+  <nav class="app-topbar" style="background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 14px 28px;">
+    <div class="topbar-left">
+      <a href="/" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+            <path d="M7 21h10"></path>
+            <path d="M12 3v18"></path>
+            <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title" style="font-size: 18px; color: #ffffff;">ADN</div>
+          <div class="brand-sub" style="color: #94a3b8;">Hukuk Teknolojisi</div>
+        </div>
+      </a>
+    </div>
+    <div class="topbar-right" style="display: flex; align-items: center; gap: 12px;">
+      <a href="/paketler" class="btn btn-secondary" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2); background: transparent; text-decoration: none;">
+        📦 Paketleri İncele
+      </a>
+      <a href="/giris" class="btn btn-secondary" style="color: #cbd5e1; border-color: rgba(255,255,255,0.2); background: transparent; text-decoration: none;">
+        🔑 Giriş Yap
+      </a>
+      <a href="/kayit" class="btn btn-primary" style="text-decoration: none; font-weight: 700;">
+        🎁 Ücretsiz Dene
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="landing-hero" style="padding: 60px 20px; text-align: center; max-width: 1000px; margin: 0 auto;">
+    <div class="hero-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); padding: 6px 16px; border-radius: 999px; margin-bottom: 24px; font-size: 13px; color: #60a5fa;">
+      <span>⚖️ Avukatlar ve Hukuk Çalışanları İçin Modern Çalışma Alanı</span>
+    </div>
+    <h1 class="hero-title" style="font-size: 42px; font-weight: 800; line-height: 1.25; margin-bottom: 20px; color: #ffffff;">
+      Hukuk Büronuzun Tüm Süreçleri Tek Merkezde
+    </h1>
+    <p class="hero-desc" style="font-size: 18px; color: #94a3b8; max-width: 720px; margin: 0 auto 32px; line-height: 1.6;">
+      Dava dosyaları, müvekkil iletişimi, duruşma takvimi, yasal süre hesaplamaları ve masraf takibi tek bir güvenli panelde. Büro verileriniz tamamen izole çalışma alanlarında saklanır.
+    </p>
+    <div class="hero-cta-group" style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; margin-bottom: 48px;">
+      <a href="/kayit" class="btn btn-primary" style="padding: 14px 32px; font-size: 16px; font-weight: 700; text-decoration: none;">
+        🎁 14 Gün Kartsız Ücretsiz Dene
+      </a>
+      <a href="/paketler" class="btn btn-secondary" style="padding: 14px 28px; font-size: 16px; color: #ffffff; background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); text-decoration: none;">
+        Paket ve Fiyatları İncele
+      </a>
+    </div>
+
+    <!-- 3D Showcase Mockup -->
+    <div class="hero-showcase-container" style="max-width: 920px; margin: 0 auto;">
+      <div class="hero-showcase-frame" style="background: #ffffff; border-radius: 16px; overflow: hidden; box-shadow: 0 25px 60px -15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.15);">
+        <div class="showcase-browser-bar" style="background: #1e293b; padding: 10px 16px; display: flex; align-items: center; gap: 8px;">
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #ef4444; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #f59e0b; display: inline-block;"></span>
+          <span style="width: 10px; height: 10px; border-radius: 50%; background: #10b981; display: inline-block;"></span>
+          <span style="margin-left: 12px; font-size: 12px; color: #94a3b8; font-family: monospace;">🔒 https://adn.av.tr/panel — Büro Yönetim Merkezi</span>
+        </div>
+        <img src="img/adn_hero_showcase.jpg" alt="ADN Hukuk Yönetim Paneli" style="width: 100%; display: block; height: auto;" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Gerçek Özellikler Özeti -->
+  <section style="background: #ffffff; color: #0f172a; padding: 60px 20px;">
+    <div style="max-width: 1100px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 12px;">Gerçek İhtiyaçlara Odaklanan Çözümler</h2>
+        <p style="color: #64748b; font-size: 16px; max-width: 600px; margin: 0 auto;">
+          Avukatların ve stajyerlerin günlük çalışma temposunda en çok zaman alan işler için tasarlandı.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+        <!-- Özellik 1 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📂</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Dava & İcra Dosyası Takibi</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Mahkeme, esas no, karşı taraf bilgileri, aşama ve dava değerini tek ekranda izleyin. Dosyalara özel evrak yükleyin ve arşive kaldırın.
+          </p>
+        </div>
+
+        <!-- Özellik 2 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">👥</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Müvekkil CRM & Çatışma Taraması</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Gerçek ve tüzel kişi müvekkillerinizi, TCKN/VKN ve iletişim detaylarını yönetin. Yeni dosya eklerken karşı vekillik çatışma kontrolü yapın.
+          </p>
+        </div>
+
+        <!-- Özellik 3 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📅</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Duruşma & Celse Takvimi</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Adliye duruşmalarınızı, celse saatlerini ve salon bilgilerini kaydedin. Yaklaşan duruşmalar için aciliyet rozetleriyle durum farkındalığı sağlayın.
+          </p>
+        </div>
+
+        <!-- Özellik 4 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">⏱️</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Usul Hukuku Süre Hesaplayıcı</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Tebligat Kanunu m. 7/a (UETS 5 gün karinesi), HMK 2 hafta, hafta sonu kaydırması ve adli tatil uzaması kurallarını şeffaf hesaplama kaynağıyla inceleyin.
+          </p>
+        </div>
+
+        <!-- Özellik 5 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">🧮</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">SMM & İcra Kapak Hesabı</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            2026 stopaj, KDV ve tevkifat oranlarına göre Serbest Meslek Makbuzu hesaplayın. İİK faiz oranlarıyla güncel dosya borcu ve icra vekâlet ücretini dökün.
+          </p>
+        </div>
+
+        <!-- Özellik 6 -->
+        <div class="card" style="border: 1px solid var(--border-color); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 32px; margin-bottom: 16px;">📜</div>
+          <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 10px;">Av. K. m.56 Yetki Belgesi Üretici</h3>
+          <p style="font-size: 14px; color: #475569; line-height: 1.6;">
+            Yetkili avukat veya stajyer adına standart resmi formatta yetki belgesi üretin, stajyer yasal mahkeme şerhlerini ekleyin ve tek tıkla yazdırın.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gizlilik & Güvenlik İlkeleri -->
+  <section style="padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center;">
+    <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 16px; color: #ffffff;">Gizlilik ve Güvenlik İlkelerimiz</h2>
+    <p style="color: #94a3b8; font-size: 16px; max-width: 700px; margin: 0 auto 36px;">
+      Verileriniz başka bürolarla asla paylaşılmaz. Sistemde sahte vaatler veya belirsiz protokoller yer almaz.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; text-align: left;">
+      <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div style="font-size: 22px; margin-bottom: 10px;">🔒</div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Çok Bürolu Veri İzolasyonu</h4>
+        <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">
+          Her hukuk bürosu bağımsız çalışma alanı olarak yönetilir. Veritabanı sorguları sunucu tarafında zorunlu filtreyle korunur.
+        </p>
+      </div>
+
+      <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div style="font-size: 22px; margin-bottom: 10px;">🛡️</div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Şifre & PIN Toplanmaz</h4>
+        <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">
+          Resmi bakanlık API protokolü olmaksızın UYAP canlı senkronizasyon iddiası sunulmaz. Avukatların e-Devlet veya e-imza şifreleri kesinlikle istenmez.
+        </p>
+      </div>
+
+      <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 24px;">
+        <div style="font-size: 22px; margin-bottom: 10px;">📦</div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 8px;">Veri Taşınabilirliği</h4>
+        <p style="font-size: 13px; color: #94a3b8; line-height: 1.6;">
+          Aboneliğiniz bitse dahi verileriniz silinmez; salt-okunur olarak korunur ve dilediğiniz an tek tıkla JSON olarak dışa aktarılabilir.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer & Yasal Bilgilendirme -->
+  <footer style="margin-top: auto; background: #070b14; border-top: 1px solid rgba(255,255,255,0.1); padding: 32px 20px; font-size: 13px; color: #64748b;">
+    <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
+      <div>
+        <div style="font-weight: 700; color: #ffffff; font-size: 15px; margin-bottom: 4px;">ADN Hukuk Teknolojisi</div>
+        <div>Hukuk Büroları İçin Güvenli Otomasyon Çözümü</div>
+      </div>
+      <div style="display: flex; gap: 20px;">
+        <a href="/paketler" style="color: #94a3b8; text-decoration: none;">Paketler</a>
+        <a href="/giris" style="color: #94a3b8; text-decoration: none;">Giriş Yap</a>
+        <a href="/kayit" style="color: #94a3b8; text-decoration: none;">Kayıt Ol</a>
+      </div>
+    </div>
+    <div style="max-width: 1100px; margin: 16px auto 0; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center; font-size: 11px; color: #475569;">
+      Bilgilendirme: Platformdaki usul ve süre hesaplama motorları mevzuat dayanaklarıyla sunulmakta olup nihai süre tespiti avukatın mesleki sorumluluk ve denetimindedir.
+    </div>
+  </footer>
+
+</body>
+</html>

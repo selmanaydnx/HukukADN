@@ -1,0 +1,109 @@
+/* ==========================================================================
+   ADN - Legal Calculator & Tools Stylesheet
+   ========================================================================== */
+
+.calc-container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+}
+
+.calc-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.calc-segmented-control {
+  display: flex;
+  background: #f1f5f9;
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.calc-segment-label {
+  flex: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.calc-segment-input {
+  display: none;
+}
+
+.calc-segment-input:checked + .calc-segment-label {
+  background: #ffffff;
+  color: var(--brand-blue);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+/* SMM Receipt Paper Preview */
+.smm-receipt-paper {
+  background: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.smm-receipt-header {
+  text-align: center;
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.smm-receipt-header h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #0f172a;
+}
+
+.smm-receipt-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.smm-receipt-row.highlight {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #059669;
+  border-top: 2px solid #e2e8f0;
+  border-bottom: none;
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+.smm-receipt-row span:first-child {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.smm-receipt-row span:last-child {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.smm-receipt-row.highlight span:first-child {
+  color: #0f172a;
+}
+
+.smm-receipt-row.highlight span:last-child {
+  color: #059669;
+}

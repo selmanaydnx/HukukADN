@@ -1,0 +1,22 @@
+{
+  "name": "adn-legal-platform",
+  "version": "1.0.0",
+  "description": "Türkiye'de çalışan avukatlar ve hukuk büroları için güvenli çok bürolu çalışma alanı ve otomasyon platformu",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/run_all.js"
+  },
+  "keywords": [
+    "hukuk",
+    "avukat",
+    "dava-takip",
+    "muvekkil-crm",
+    "smm",
+    "uets",
+    "kvkk"
+  ],
+  "author": "ADN",
+  "license": "UNLICENSED",
+  "private": true
+}
