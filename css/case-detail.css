@@ -1,0 +1,428 @@
+/* ==========================================================================
+   ADN - 02 Dosya Detayı Stylesheet
+   ========================================================================== */
+
+/* Breadcrumbs */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.breadcrumb-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--brand-blue);
+}
+
+.breadcrumb-sep {
+  color: var(--text-light);
+  font-size: 0.75rem;
+}
+
+/* Case Detail Top Header */
+.case-header-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-card);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.case-title-area {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.case-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.case-title-row h2 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.3px;
+}
+
+.case-status-badge {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.status-dot-active {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+}
+
+.case-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.case-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Case Subtabs Navigation */
+.case-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-card);
+  margin-bottom: 24px;
+  padding-left: 6px;
+}
+
+.case-tab-btn {
+  background: transparent;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 10px 4px 14px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.case-tab-btn:hover {
+  color: var(--text-main);
+}
+
+.case-tab-btn.active {
+  color: var(--brand-blue);
+  font-weight: 700;
+}
+
+.case-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2.5px;
+  background: var(--brand-blue);
+  border-radius: 2px 2px 0 0;
+}
+
+/* 3-Column Layout */
+.case-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1.15fr;
+  gap: 20px;
+}
+
+/* Column 1: Dosya Bilgileri */
+.info-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-field-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+
+.info-field-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.info-field-value {
+  color: var(--text-main);
+  font-weight: 600;
+  text-align: right;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag-item {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tag-add-btn {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  color: var(--text-muted);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.case-note-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  color: #334155;
+  line-height: 1.45;
+  margin-top: 14px;
+}
+
+/* Column 2: Dosya Süreci Timeline */
+.timeline-stepper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline-stepper::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  bottom: 24px;
+  left: 10px;
+  width: 2px;
+  background: #e2e8f0;
+}
+
+.timeline-step {
+  position: relative;
+  margin-bottom: 22px;
+}
+
+.timeline-step:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 2px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.timeline-step.completed .timeline-dot {
+  border-color: #10b981;
+  background: #10b981;
+  color: #ffffff;
+}
+
+.timeline-step.current .timeline-dot {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.timeline-step.future .timeline-dot {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timeline-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timeline-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.timeline-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.timeline-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Column 3: Belgeler Panel */
+.doc-search-box {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.doc-search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+.doc-subtabs {
+  display: flex;
+  gap: 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.doc-subtab-item {
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.doc-subtab-item.active {
+  color: var(--brand-blue);
+  border-bottom: 2px solid var(--brand-blue);
+}
+
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.doc-item:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.doc-icon-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.icon-word {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.icon-pdf {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.doc-info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.doc-meta {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.doc-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.doc-action-btn:hover {
+  color: var(--text-main);
+  background: #e2e8f0;
+}

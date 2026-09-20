@@ -1,0 +1,56 @@
+/* ==========================================================================
+   ADN - CRM & Finance Stylesheet
+   ========================================================================== */
+
+.crm-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.fin-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.fin-overview-card {
+  background: #ffffff;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.fin-card-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fin-card-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.fin-val-green { color: #059669; }
+.fin-val-red { color: #dc2626; }
+.fin-val-blue { color: #2563eb; }
+
+/* WhatsApp Message Preview Box */
+.whatsapp-chat-bubble {
+  background: #dcf8c6;
+  border-radius: 12px 12px 0 12px;
+  padding: 16px;
+  color: #111827;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid #c7ebb0;
+  position: relative;
+  margin-bottom: 16px;
+}
